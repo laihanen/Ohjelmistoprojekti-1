@@ -6,15 +6,15 @@ import javax.validation.constraints.Size;
 /**
  * Created by bferr on 12.4.2017.
  */
-public class kysymysImpl {
+public class KysymysImpl implements Kysymys {
 
     private int id;
 
     @Size(min = 1, max = 255)
-    private String kysymysNimi;
-    
+    private String otsikko;
+
     @Size(min = 1, max = 255)
-    private String kysymysTeksti;
+    private String kysymysteksti;
 
     public int getId() {
         return id;
@@ -24,28 +24,28 @@ public class kysymysImpl {
         this.id = id;
     }
 
-    public String getKysymysNimi() {
-        return kysymysNimi;
+    public String getOtsikko() {
+        return otsikko;
     }
 
-    public void setKysymysNimi(String kysymysNimi) {
-        this.kysymysNimi = kysymysNimi;
+    public void setOtsikko(String otsikko) {
+        this.otsikko = otsikko;
     }
 
-    public String getKysymysTeksti() {
-        return kysymysTeksti;
+    public String getKysymysteksti() {
+        return kysymysteksti;
     }
 
-    public void setKysymysTeksti(String kysymysTeksti) {
-        this.kysymysTeksti = kysymysTeksti;
+    public void setKysymysteksti(String kysymysteksti) {
+        this.kysymysteksti = kysymysteksti;
     }
 
     @Override
     public String toString() {
-        return "kysymysImpl{" +
+        return "KysymysImpl{" +
                 "id=" + id +
-                ", kysymysNimi='" + kysymysNimi + '\'' +
-                ", kysymysTeksti='" + kysymysTeksti + '\'' +
+                ", otsikko='" + otsikko + '\'' +
+                ", kysymysteksti='" + kysymysteksti + '\'' +
                 '}';
     }
 }
