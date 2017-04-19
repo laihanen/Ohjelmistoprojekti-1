@@ -20,8 +20,9 @@ public class KysymysSpring {
 
     public List<Kysymykset> haeKaikki(){
 
+        String sql = "select id, otsikko, kysymysteksti from kysymys";
         RowMapper<Kysymykset> mapper = new KysymyksetRowMapper();
-
+        List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
         return kysymykset;
     }
 }
