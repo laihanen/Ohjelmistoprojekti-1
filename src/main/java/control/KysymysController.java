@@ -39,8 +39,11 @@ public class KysymysController {
     }
 
     // Form tiedon vastaanotto
-    @
-
+    @RequestMapping (value="id", method=requestMethod.GET)
+        public String create(@ModelAttribute(value="kysymys") KysymysImpl kysymys){
+        dao.tallenna(kysymys);
+        return "redirect:/kysymys/" + kysymys.getId();
+    }
 
     // Tietojen näyttö
 }
