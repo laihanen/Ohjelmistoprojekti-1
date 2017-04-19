@@ -1,7 +1,46 @@
 package control;
 
+import bean.Kysymys;
+import bean.KysymysImpl;
+import dao.KysymysDAO;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import javax.inject.Inject;
+
+import static javax.swing.text.StyleConstants.ModelAttribute;
+
 /**
  * Created by bferr on 19.4.2017.
  */
+
+@Controller
+@RequestMapping (value="/secure")
 public class KysymysController {
+
+    @Inject KysymysDAO dao;
+
+    public KysymysDAO getDao(){
+        return dao;
+    }
+
+    public void setDao(KysymysDAO dao){
+        this.dao = dao;
+    }
+
+    // Form luominen
+
+    @RequestMapping (value="id", method=RequestMethod.GET)
+    public String getCreateForm(Model model){
+        Kysymys tyhjaKysymys = new KysymysImpl();
+        tyhjaKysymys.setOtsikko("oletusotsikko");
+        model.addAttribute("kysymys", tyhjaKysymys);
+        return "secure/add";
+    }
+
+    // Form tiedon vastaanotto
+    @
+
+
+    // Tietojen näyttö
 }
