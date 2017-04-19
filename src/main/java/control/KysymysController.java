@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
+import java.util.List;
 
 
 /**
@@ -51,7 +52,7 @@ public class KysymysController {
     // Tietojen näyttö
     @RequestMapping (value="id", method= RequestMethod.GET)
     public String getView(@PathVariable Integer id, Model model){
-        Kysymys kysymys = dao.etsi(id);
+        List<Kysymys> kysymys = dao.haeKaikki();
         model.addAttribute("kysymys", kysymys);
         return "secure/view";
     }
