@@ -9,8 +9,6 @@ public interface KysymysDAO {
 
     public abstract void lisaaKysymys(Kysymys kysymys);
 
-    public abstract Kysymys etsi(int id);
-
     public abstract void poista(int id);
 
     public abstract List<Kysymys> haeKaikki();
