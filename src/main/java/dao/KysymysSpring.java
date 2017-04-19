@@ -50,7 +50,6 @@ public class KysymysSpring implements KysymysDAO{
 
     public void poista(int id){
 
-        
     }
 
     public List<Kysymys> haeKaikki(){
