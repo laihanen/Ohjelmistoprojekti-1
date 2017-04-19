@@ -5,17 +5,18 @@ import bean.KysymysImpl;
 import dao.KysymysDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
-import static javax.swing.text.StyleConstants.ModelAttribute;
 
 /**
  * Created by bferr on 19.4.2017.
  */
 
 @Controller
-@RequestMapping (value="/secure")
+@RequestMapping(value="/secure")
 public class KysymysController {
 
     @Inject KysymysDAO dao;
@@ -30,7 +31,7 @@ public class KysymysController {
 
     // Form luominen
 
-    @RequestMapping (value="id", method=RequestMethod.GET)
+    @RequestMapping (value="id", method= RequestMethod.GET)
     public String getCreateForm(Model model){
         Kysymys tyhjaKysymys = new KysymysImpl();
         tyhjaKysymys.setOtsikko("oletusotsikko");
