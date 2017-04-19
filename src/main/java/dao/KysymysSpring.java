@@ -2,19 +2,31 @@ package dao;
 
 import bean.Kysymys;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
+
+
 /**
  * Created by bferr on 19.4.2017.
  */
-public class KysymysSpring {
+@Repository
+public class KysymysSpring implements KysymysDAO{
 
+    @Inject
+    public JdbcTemplate jdbcTemplate;
 
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public void lisaakysymys(Kysymys t){
 
         final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
-
         final String otsikko = t.getOtsikko();
         final String teksti = t.getKysymysteksti();
+
+        KeyHolder idHolder = GeneratedKeyHolder();
 
     }
 }
