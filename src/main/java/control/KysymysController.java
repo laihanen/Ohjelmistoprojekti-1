@@ -5,6 +5,7 @@ import bean.KysymysImpl;
 import dao.KysymysDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,9 +41,9 @@ public class KysymysController {
     }
 
     // Form tiedon vastaanotto
-    @RequestMapping (value="id", method=requestMethod.GET)
+    @RequestMapping (value="id", method= RequestMethod.GET)
         public String create(@ModelAttribute(value="kysymys") KysymysImpl kysymys){
-        dao.tallenna(kysymys);
+        dao.lisaaKysymys(kysymys);
         return "redirect:/kysymys/" + kysymys.getId();
     }
 
