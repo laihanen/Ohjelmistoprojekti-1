@@ -50,6 +50,10 @@ public class KysymysSpring implements KysymysDAO{
 
     public void poista(int id){
 
+        String sql = "delete from kysymys where id = ?";
+        jdbcTemplate.update(sql, id);
+        System.out.println("Deleted Record with ID = " + id );
+        return;
     }
 
     public List<Kysymys> haeKaikki(){
