@@ -18,7 +18,10 @@ public class KysymysSpring {
 
     }
 
-    public  haeKaikki(){
+    public List<Kysymykset> haeKaikki(){
 
+        RowMapper<Kysymykset> mapper = new KysymyksetRowMapper();
+
+        return kysymykset;
     }
 }
