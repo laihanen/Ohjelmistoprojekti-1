@@ -29,4 +29,12 @@ public class KysymysSpring implements KysymysDAO{
         KeyHolder idHolder = GeneratedKeyHolder();
 
     }
+
+    public List<Kysymykset> haeKaikki(){
+
+        String sql = "select id, otsikko, kysymysteksti from kysymys";
+        RowMapper<Kysymykset> mapper = new KysymyksetRowMapper();
+        List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
+        return kysymykset;
+    }
 }
