@@ -4,6 +4,7 @@ import bean.Kysymys;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+import javax.inject.Inject;
 
 
 /**
@@ -51,10 +53,10 @@ public class KysymysSpring implements KysymysDAO{
         
     }
 
-    public List<Kysymykset> haeKaikki(){
+    public List<Kysymys> haeKaikki(){
 
         String sql = "select id, otsikko, kysymysteksti from kysymys";
-        RowMapper<Kysymykset> mapper = new KysymyksetRowMapper();
+        RowMapper<Kysymys> mapper = new KysymysRowMapper();
         List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
         return kysymykset;
     }

@@ -7,9 +7,7 @@ import bean.Kysymys;
  */
 public interface KysymysDAO {
 
-    public abstract void tallenna(Kysymys kysymys);
+    public abstract void lisaaKysymys(Kysymys kysymys);
 
-    public abstract Kysymys etsi(int id);
-
-    public abstract List<Kysymykset> haeKaikki();
+    public abstract List<Kysymys> haeKaikki();
 }
