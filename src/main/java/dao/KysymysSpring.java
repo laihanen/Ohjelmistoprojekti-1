@@ -27,7 +27,7 @@ public class KysymysSpring implements KysymysDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void lisaakysymys(Kysymys t){
+    public void lisaaKysymys(Kysymys t){
 
         final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
         final String otsikko = t.getOtsikko();
