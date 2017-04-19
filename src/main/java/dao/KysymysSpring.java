@@ -17,4 +17,8 @@ public class KysymysSpring {
         final String teksti = t.getKysymysteksti();
 
     }
+
+    public  haeKysymys(){
+        
+    }
 }
