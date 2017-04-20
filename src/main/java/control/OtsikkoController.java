@@ -31,4 +31,9 @@ public class OtsikkoController {
         model.addAttribute("otsikko", tyhjaOtsikko);
         return "secure/add";
     }
+
+    // Vastaanotto
+
+    // Näyttö
+
 }
