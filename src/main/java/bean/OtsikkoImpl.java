@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 /**
  * Created by bferr on 20.4.2017.
  */
-public class OtsikkoImpl {
+public class OtsikkoImpl implements Otsikko {
 
     private int id;
 
