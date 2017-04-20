@@ -27,5 +27,6 @@ public class OtsikkoSpring implements OtsikkoDAO {
         KeyHolder idHolder = new GeneratedKeyHolder();
     }
 
+    // Juho alapuolelle
 
 }
