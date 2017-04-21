@@ -16,5 +16,5 @@ public interface Kysely {
     public abstract String getLuoja();
 
     public abstract void setLuoja(String nimi);
-    
+
 }

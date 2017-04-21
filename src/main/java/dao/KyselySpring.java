@@ -50,6 +50,9 @@ public class KyselySpring implements KyselyDAO {
         return;
     }
 
+
+    public
+
     public void hae
 
     // ime sykkivää
