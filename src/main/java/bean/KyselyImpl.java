@@ -12,6 +12,9 @@ public class KyselyImpl implements Kysely {
     @Size(min = 1, max = 255)
     private String nimi;
 
+    @Size(min = 1, max = 255)
+    private String luoja;
+
     public int getId() {
         return id;
     }
@@ -28,11 +31,21 @@ public class KyselyImpl implements Kysely {
         this.nimi = nimi;
     }
 
+
+    public String getLuoja() {
+        return luoja;
+    }
+
+    public void setLuoja(String luoja) {
+        this.luoja = luoja;
+    }
+
     @Override
     public String toString() {
         return "KyselyImpl{" +
                 "id=" + id +
                 ", nimi='" + nimi + '\'' +
+                ", luoja='" + luoja + '\'' +
                 '}';
     }
 }
