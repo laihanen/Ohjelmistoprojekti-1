@@ -13,8 +13,8 @@ public interface Kysely {
 
     public abstract void setNimi(String nimi);
 
-    public abstract String getLuoja();
+    public abstract String getLuojaNimi();
 
-    public abstract void setLuoja(String nimi);
+    public abstract void setLuojaNimi(String nimi);
 
 }

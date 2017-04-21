@@ -1,8 +1,10 @@
 package dao;
 
 import bean.Kysely;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
@@ -52,7 +54,19 @@ public class KyselySpring implements KyselyDAO {
     }
 
 
-    public
+    public Kysely etsi(String luojaNimi){
+        String sql = "select * from kysely where luojaNimi = ?";
+        Object[] parametrit = new Object[] {id};
+        RowMapper<Kysely> mapper = new KyselyRowMapper();
+
+        Kysely m;
+        try{
+            m = jdbcTemplate.queryForObject(sql, parametrit, mapper);
+        } catch (IncorrectResultSizeDataAccessException e){
+            throw new (e);
+        }
+        return m;
+    }
 
     public void hae
 
