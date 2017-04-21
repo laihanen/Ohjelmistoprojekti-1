@@ -1,7 +1,6 @@
 package dao;
 
 import bean.Kysely;
-import bean.Kysymys;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
