@@ -12,4 +12,9 @@ public interface Kysely {
     public abstract String getNimi();
 
     public abstract void setNimi(String nimi);
+
+    public abstract String getLuoja();
+
+    public abstract void setLuoja(String nimi);
+    
 }
