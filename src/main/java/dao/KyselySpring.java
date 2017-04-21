@@ -1,6 +1,7 @@
 package dao;
 
 import bean.Kysely;
+import bean.Kysymys;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -11,6 +12,7 @@ import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by Iiro on 20.4.2017.
@@ -52,5 +54,13 @@ public class KyselySpring implements KyselyDAO {
 
     public void hae
 
-    // ime sykkivää
+    
+
+    public List<Kysely> haeOmat(){
+
+    }
+
+    public List<Kysely> haeKaikki(){
+
+    }
 }
