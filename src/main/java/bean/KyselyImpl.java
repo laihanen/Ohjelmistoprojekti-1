@@ -13,7 +13,7 @@ public class KyselyImpl implements Kysely {
     private String nimi;
 
     @Size(min = 1, max = 255)
-    private String luoja;
+    private String luojaNimi;
 
     public int getId() {
         return id;
@@ -32,12 +32,12 @@ public class KyselyImpl implements Kysely {
     }
 
 
-    public String getLuoja() {
-        return luoja;
+    public String getLuojaNimi() {
+        return luojaNimi;
     }
 
-    public void setLuoja(String luoja) {
-        this.luoja = luoja;
+    public void setLuojaNimi(String luoja) {
+        this.luojaNimi = luojaNimi;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class KyselyImpl implements Kysely {
         return "KyselyImpl{" +
                 "id=" + id +
                 ", nimi='" + nimi + '\'' +
-                ", luoja='" + luoja + '\'' +
+                ", luoja='" + luojaNimi + '\'' +
                 '}';
     }
 }
