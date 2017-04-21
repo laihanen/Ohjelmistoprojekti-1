@@ -46,7 +46,7 @@ public class KyselyController {
 
     @RequestMapping (value = "id", method = RequestMethod.GET)
     public String getView(@PathVariable Integer id, Model model){
-        List<Kysely> kysely = dao.haeKaikki();
+        List<Kysely> kysely = dao.haeKysely();
         model.addAttribute("kysely", kysely);
         return "secure/view"
     }
