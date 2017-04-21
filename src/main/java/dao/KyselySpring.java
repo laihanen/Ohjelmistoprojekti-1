@@ -30,8 +30,9 @@ public class KyselySpring implements KyselyDAO {
 
     public void lisaaKysely(Kysely k){
 
-        final String sql = "insert into kysely(nimi) values(?)";
+        final String sql = "insert into kysely(nimi, luojanimi) values(?)";
         final String nimi = k.getNimi();
+        final String luojanimi = k.getLuojaNimi();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 
@@ -39,6 +40,7 @@ public class KyselySpring implements KyselyDAO {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
                 pre.setString(1, nimi);
+                pre.setString(1, luojanimi);
                 return pre;
             }
         }, idHolder);
@@ -54,18 +56,13 @@ public class KyselySpring implements KyselyDAO {
     }
 
 
-    public Kysely etsi(String luojaNimi){
-        String sql = "select * from kysely where luojaNimi = ?";
-        Object[] parametrit = new Object[] {id};
+    public List<Kysely> haeOmat(String luojaNimi){
+        String sql = "select * from kysely where luojanimi = ?";
+        Object[] parametrit = new Object[] {luojaNimi};
         RowMapper<Kysely> mapper = new KyselyRowMapper();
+        List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
 
-        Kysely m;
-        try{
-            m = jdbcTemplate.queryForObject(sql, parametrit, mapper);
-        } catch (IncorrectResultSizeDataAccessException e){
-            throw new (e);
-        }
-        return m;
+        return kyselyt;
     }
 
     public void hae
