@@ -33,7 +33,7 @@ public class KyselyController {
     @RequestMapping (value="id", method = RequestMethod.GET)
     public String getCreateForm(Model model){
         Kysely tyhjaKysely = new KyselyImpl();
-        tyhjaKysely setNimi = ("oletusnimi");
+        tyhjaKysely.setNimi("oletusnimi");
         model.addAttribute("kysely", tyhjaKysely);
         return "secure/add";
     }
