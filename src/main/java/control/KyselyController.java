@@ -39,7 +39,7 @@ public class KyselyController {
     }
 
     @RequestMapping (value = "id", method = RequestMethod.GET)
-    public String create(@ModelAttribute(value = "kysely"), KyselyImpl kysely){
+    public String create(@ModelAttribute(value="kysely") KyselyImpl kysely){
         dao.lisaaKysely(kysely);
         return "redirect:/kysely/" + kysely.getId();
     }
@@ -48,6 +48,6 @@ public class KyselyController {
     public String getView(@PathVariable Integer id, Model model){
         List<Kysely> kysely = dao.haeKysely();
         model.addAttribute("kysely", kysely);
-        return "secure/view"
+        return "secure/view";
     }
 }
