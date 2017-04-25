@@ -65,13 +65,6 @@ public class KyselySpring implements KyselyDAO {
         return kyselyt;
     }
 
-    public void hae
-
-    
-
-    public List<Kysely> haeOmat(){
-
-    }
 
     public List<Kysely> haeKaikki(){
 
