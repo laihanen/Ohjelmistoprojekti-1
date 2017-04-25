@@ -74,6 +74,10 @@ public class KyselySpring implements KyselyDAO {
     }
 
     public List<Kysely> haeKaikki(){
+        String sql = "select * from kysely";
+        RowMapper<Kysely> mapper = new KyselyRowMapper();
+        List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
 
+        return kyselyt;
     }
 }
