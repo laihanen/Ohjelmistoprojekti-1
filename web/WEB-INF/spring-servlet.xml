@@ -4,7 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <context:component-scan base-package="Ohjelmistoprojecti-1" />
+    <context:component-scan base-package="Ohjelmistoprojekti-1" />
 
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
