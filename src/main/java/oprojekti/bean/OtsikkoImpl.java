@@ -2,6 +2,7 @@ package oprojekti.bean;
 
 import javax.validation.constraints.Size;
 
+
 /**
  * Created by bferr on 20.4.2017.
  */
