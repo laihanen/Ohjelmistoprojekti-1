@@ -15,14 +15,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-<<<<<<< HEAD
 
     <orderEntry type="library" exported="" name="Hibernate 5.2.9-5.2.9" level="project" />
-
-=======
-    
-    <orderEntry type="library" exported="" name="Hibernate 5.2.9-5.2.9" level="project" />
->>>>>>> e5598ff27ee40931f10096000425ae70b49695a9
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.0.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.0.3.RELEASE" level="project" />
