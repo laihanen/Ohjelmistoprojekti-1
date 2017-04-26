@@ -1,8 +1,8 @@
-package control;
+package oprojekti.control;
 
-import bean.Kysely;
-import bean.KyselyImpl;
-import dao.KyselyDAO;
+import oprojekti.bean.Kysely;
+import oprojekti.bean.KyselyImpl;
+import oprojekti.dao.KyselyDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

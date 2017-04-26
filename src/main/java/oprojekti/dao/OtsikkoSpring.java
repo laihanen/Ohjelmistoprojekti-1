@@ -1,6 +1,6 @@
-package dao;
+package oprojekti.dao;
 
-import bean.Otsikko;
+import oprojekti.bean.Otsikko;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;

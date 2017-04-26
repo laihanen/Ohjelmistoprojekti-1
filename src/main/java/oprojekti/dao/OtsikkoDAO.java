@@ -1,6 +1,6 @@
-package dao;
+package oprojekti.dao;
 
-import bean.Otsikko;
+import oprojekti.bean.Otsikko;
 
 import java.util.List;
 

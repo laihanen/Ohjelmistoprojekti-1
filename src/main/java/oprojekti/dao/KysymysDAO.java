@@ -1,7 +1,7 @@
-package dao;
+package oprojekti.dao;
 
 import java.util.List;
-import bean.Kysymys;
+import oprojekti.bean.Kysymys;
 /**
  * Created by bferr on 19.4.2017.
  */

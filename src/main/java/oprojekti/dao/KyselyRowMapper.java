@@ -1,8 +1,8 @@
-package dao;
+package oprojekti.dao;
 
 
-import bean.Kysely;
-import bean.KyselyImpl;
+import oprojekti.bean.Kysely;
+import oprojekti.bean.KyselyImpl;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

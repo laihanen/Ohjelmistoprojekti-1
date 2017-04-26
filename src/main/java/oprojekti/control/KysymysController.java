@@ -1,8 +1,8 @@
-package control;
+package oprojekti.control;
 
-import bean.Kysymys;
-import bean.KysymysImpl;
-import dao.KysymysDAO;
+import oprojekti.bean.Kysymys;
+import oprojekti.bean.KysymysImpl;
+import oprojekti.dao.KysymysDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

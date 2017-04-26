@@ -1,8 +1,8 @@
-package control;
+package oprojekti.control;
 
-import bean.Otsikko;
-import bean.OtsikkoImpl;
-import dao.OtsikkoDAO;
+import oprojekti.bean.Otsikko;
+import oprojekti.bean.OtsikkoImpl;
+import oprojekti.dao.OtsikkoDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

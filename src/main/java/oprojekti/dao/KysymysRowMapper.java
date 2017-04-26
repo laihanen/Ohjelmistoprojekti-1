@@ -1,7 +1,7 @@
-package dao;
+package oprojekti.dao;
 
-import bean.Kysymys;
-import bean.KysymysImpl;
+import oprojekti.bean.Kysymys;
+import oprojekti.bean.KysymysImpl;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

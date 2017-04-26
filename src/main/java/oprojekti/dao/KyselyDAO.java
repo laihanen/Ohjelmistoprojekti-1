@@ -1,6 +1,6 @@
-package dao;
+package oprojekti.dao;
 
-import bean.Kysely;
+import oprojekti.bean.Kysely;
 
 import java.util.List;
 

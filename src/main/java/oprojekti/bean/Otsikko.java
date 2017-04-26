@@ -1,4 +1,4 @@
-package bean;
+package oprojekti.bean;
 
 /**
  * Created by bferr on 20.4.2017.

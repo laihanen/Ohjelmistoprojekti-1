@@ -1,4 +1,4 @@
-package bean;
+package oprojekti.bean;
 
 import javax.validation.constraints.Size;
 

@@ -1,7 +1,6 @@
-package dao;
+package oprojekti.dao;
 
-import bean.Kysymys;
-
+import oprojekti.bean.Kysely;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
@@ -9,18 +8,17 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
+import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import javax.inject.Inject;
-
 
 /**
- * Created by bferr on 19.4.2017.
+ * Created by Iiro on 20.4.2017.
  */
 @Repository
-public class KysymysSpring implements KysymysDAO{
+public class KyselySpring implements KyselyDAO {
 
     @Inject
     public JdbcTemplate jdbcTemplate;
@@ -29,38 +27,49 @@ public class KysymysSpring implements KysymysDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void lisaaKysymys(Kysymys t){
+    public void lisaaKysely(Kysely k){
 
-        final String sql = "insert into kysymys(otsikko, kysymysteksti) values(?,?)";
-        final String otsikko = t.getOtsikko();
-        final String teksti = t.getKysymysteksti();
+        final String sql = "insert into kysely(nimi, luojanimi) values(?)";
+        final String nimi = k.getNimi();
+        final String luojanimi = k.getLuojaNimi();
 
         KeyHolder idHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(new PreparedStatementCreator() {
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
                 PreparedStatement pre = con.prepareStatement(sql, new String[]{"id"});
-                pre.setString(1, otsikko);
-                pre.setString(2, teksti);
+                pre.setString(1, nimi);
+                pre.setString(1, luojanimi);
                 return pre;
             }
         }, idHolder);
-        t.setId(idHolder.getKey().intValue());
+        k.setId(idHolder.getKey().intValue());
     }
 
     public void poista(int id){
 
-        String sql = "delete from kysymys where id = ?";
+        String sql = "delete from kysely where id = ?";
         jdbcTemplate.update(sql, id);
         System.out.println("Deleted Record with ID = " + id );
         return;
     }
 
-    public List<Kysymys> haeKaikki(){
 
-        String sql = "select id, otsikko, kysymysteksti from kysymys";
-        RowMapper<Kysymys> mapper = new KysymysRowMapper();
-        List<Kysymys> kysymykset = jdbcTemplate.query(sql, mapper);
-        return kysymykset;
+    public List<Kysely> haeOmat(String luojaNimi){
+        String sql = "select * from kysely where luojanimi = ?";
+        Object[] parametrit = new Object[] {luojaNimi};
+        RowMapper<Kysely> mapper = new KyselyRowMapper();
+        List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
+
+        return kyselyt;
+    }
+
+
+    public List<Kysely> haeKaikki(){
+        String sql = "select * from kysely";
+        RowMapper<Kysely> mapper = new KyselyRowMapper();
+        List<Kysely> kyselyt = jdbcTemplate.query(sql, mapper);
+
+        return kyselyt;
     }
 }
