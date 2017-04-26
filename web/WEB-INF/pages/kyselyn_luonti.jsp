@@ -69,7 +69,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="<c:url value="/resources/js/scrolloverflow.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.fullPage.min.js" />"></script>
-<script src="<c:url value="/resources/js/scripts.js" />"></script>
 <script>
     $(document).ready(function() {
         $('#fullpage').fullpage({
