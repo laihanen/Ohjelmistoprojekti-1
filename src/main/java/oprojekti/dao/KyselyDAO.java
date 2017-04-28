@@ -13,7 +13,7 @@ public interface KyselyDAO {
 
     public abstract void poista(int id);
 
-    public abstract List<Kysely> haeKysely();
+    public abstract List<Kysely> haeKysely(int id);
 
     public abstract List<Kysely> haeOmat();
 

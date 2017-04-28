@@ -54,6 +54,11 @@ public class KyselySpring implements KyselyDAO {
         return;
     }
 
+    public List<Kysely> haeKysely(int id){
+        
+        return;
+    }
+
 
     public List<Kysely> haeOmat(String luojaNimi){
         String sql = "select * from kysely where luojanimi = ?";
